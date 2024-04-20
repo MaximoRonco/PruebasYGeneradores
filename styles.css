@@ -1,0 +1,502 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+.none{
+    display: none !important ;
+}
+
+.block{
+    display: flex !important;
+}
+
+#particles-js{
+    position: absolute;
+    top: 0 !important;
+    height: 1190px !important;
+    width: 100% !important;
+    z-index: 0;
+}
+
+.contenedorPrincipal{
+    width: 100%;
+    height: 1200px;
+    background-color: rgb(22, 22, 22);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center
+}
+
+.fullPantalla{
+    padding: 100px;
+    height: auto !important;
+    width: 100%;
+    background-color: rgb(22, 22, 22);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center
+}
+
+#contenedorPrincipal h1{
+    color: white;
+    font-size: 40px;
+}
+
+#ingresoDeDatos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    width: 35%;
+    height: 650px;
+    background-color: rgb(24, 24, 24);
+    box-shadow: 0px 0px 35px rgb(171, 25, 255);
+    border-radius: 10px;
+    color: white;
+    z-index: 1;
+}
+
+.linea{
+    border-bottom: 1px solid rgba(171, 25, 255, 0.651);
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#ingresoDeDatos h3{
+    font-size: 45px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    color: rgb(240, 240, 240);
+}
+
+#datos{
+    width: 400px;
+    height: 300px;
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(24, 24, 24);
+}
+
+#datos input, select{
+    height: 50px !important;
+    width: 370px;
+}
+
+input[type="text"], select {
+    color: white;
+    font-size: 27px;
+    font-weight: 600;
+    text-align: center;
+    background-color: rgb(24, 24, 24);
+    border: 2px solid rgba(171, 25, 255, 0.425);
+    border-radius: 5px;
+}
+
+#cont-datos{
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#datos label, .popUp label{
+    font-size: 30px;
+    font-weight:bold;
+    margin: 20px;
+}
+
+#datos button, #volver, #okNormal, #okUniforme, #okExponencial, #salir{
+    margin-top: 50px;
+    width: 100px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color:  rgb(171, 25, 255) ;
+    border: none;
+    color: white;
+    border-radius: 5px;
+}
+
+#datos button:hover, #volver:hover,  #okNormal:hover, #okUniforme:hover, #okExponencial:hover, #salir:hover, #mostrarMas:hover{
+    transform: scale(1.05);
+    background-color:  rgb(142, 13, 216) ;
+    box-shadow: 0px 0px 2px rgb(95, 5, 148);
+    transition: all 200ms;
+    color: white;
+}
+
+#mostrarMas{
+    margin: 0 auto;
+    margin-top: 50px;
+    width: 200px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color:  rgb(171, 25, 255) ;
+    border: none;
+    color: white;
+    border-radius: 5px;
+
+}
+
+#grafica {
+    display: flex ;
+    flex-direction: column;
+    width: 50%;
+    height: 400px;
+    background-color: rgb(27, 27, 27);
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0px 0px 35px rgb(171, 25, 255);
+    z-index: 1;
+}
+/* Estilos para pop up*/
+.popUp{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: rgb(24, 24, 24);
+    height: 700px;
+    width: 35%;
+    position: absolute;
+    z-index: 99999;
+    border-radius: 10px;
+    box-shadow: 0px 0px 35px rgb(158, 158, 158);
+}
+
+/*PopUp mostrar Mas*/
+
+#popMostrarMas{
+    
+    height: 800px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*Estilos para tabla*/
+
+#colRnd{
+    display: flex;
+}
+
+#columnaGenerados{
+    color: white;
+    margin-right: 5px;
+}
+
+#columnaTransformados{
+    color: rgb(0, 0, 0);
+    background-color: white !important;
+    
+}
+
+#columnaGenerados li, #columnaTransformados li{
+    border-bottom: 5px solid rgb(0, 0, 0);
+}
+
+#tabla{
+    width: 1400px;
+    margin-top: 300px;
+    height: 1200px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.encabezado{
+    background-color: white !important;
+    color: black;
+    font-weight: bold;
+    box-shadow: 0px 0px 12px rgb(173, 173, 173);
+}
+
+.chi{
+    background-color: rgba(142, 13, 216, 0.685) ;
+    border-radius: 2px;
+    border: 1px solid white;
+}
+
+.fila{
+    display: flex;
+}
+
+#col1 li, #col2 li, .fila li, #columnaGenerados, #columnaTransformados{
+    background-color: rgba(142, 13, 216, 0.685) ;
+    text-align: center;
+    list-style: none;
+    margin-bottom: 5px;
+}
+
+.fila li{
+    margin: 10px;
+}
+
+.columna{
+    width: 200px;
+}
+
+/* Estilos para Alertas*/
+.custom-alert-class {
+    width: 450px !important; 
+    height: 230px !important;
+    font-size: 15px !important;
+    margin-right: 50px;
+    font-size: 12px !important;
+}
+
+.custom-alert-content-class {
+    width: 100% !important;
+    height: 100% !important;
+    font-size: 10px !important;
+}
+
+.swal2-confirm{
+    background-color:  rgb(142, 13, 216) !important;
+}
+
+
+
+
+/* Estilos para las columnas dentro del popUp */
+#colRnd {
+    display: flex; 
+    height: auto !important;
+}
+
+/* Estilos para cada columna */
+#columnaGenerados,
+#columnaTransformados {
+    max-height: 600px; /* Ajusta esta altura según tus necesidades */
+    overflow-y: auto; /* Agrega desplazamiento vertical si es necesario */
+}
+
+#salir{
+    margin-top: 50px;
+}
+
+#popFondoNormal , #popFondoExponencial, #popFondoUniforme, #popFondoMostrarMas{
+    width: 100%;
+    background-color: rgba(95, 95, 95, 0.548);
+    height: 100%;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+}
+
+#popFondoMostrarMas{
+    height: 2100px !important;
+    width: 100% !important;
+}
+
+#popMostrarMas h3{
+    margin-bottom: 20px;
+}
+
+#popFondoNormal , #popFondoExponencial, #popFondoUniforme{
+    height: 1200px;
+}
+
+/* Responsive */
+
+@media only screen and (max-width: 1600px) {
+    body {
+        font-size: 16px; /* Tamaño de fuente base */
+    }
+    #popMostrarMas h3{
+        font-size: 20px;
+    }
+    
+
+    #contenedorPrincipal{
+        height: 2100px !important;
+    }
+    #ingresoDeDatos h3{
+        font-size: 35px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        color: rgb(240, 240, 240);
+    }
+    #ingresoDeDatos{
+        margin-top: 50px;
+        width: 30%;
+        height: 650px  !important;
+    }
+
+    .fullPantalla {
+        padding: 50px; /* Reducir el padding */
+    }
+    #ingresoDeDatos {
+        width: 50%; /* Reducir el ancho */
+        height: auto; /* Altura automática */
+    }
+    #datos input,
+    #datos select {
+        width: 100%; /* Ancho completo */
+    }
+}
+
+
+@media only screen and (max-width: 1366px) {
+    body {
+        font-size: 16px; /* Tamaño de fuente base */
+    }
+    
+    button{
+        font-size: 15px !important;
+    }
+
+    #ingresoDeDatos h3{
+        font-size: 35px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        color: rgb(240, 240, 240);
+    }
+    #ingresoDeDatos{
+        margin-top: 50px;
+        width: 30%;
+        height: 650px  !important;
+    }
+
+    .fullPantalla {
+        padding: 50px; /* Reducir el padding */
+    }
+    #ingresoDeDatos {
+        width: 50%; /* Reducir el ancho */
+        height: auto; /* Altura automática */
+    }
+    #datos input,
+    #datos select {
+        width: 100%; /* Ancho completo */
+    }
+    #tabla{
+        width: 100% !important;
+    }
+    .fila{
+        width: 90%;
+    }
+
+    #popMostrarMas{
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width: 980px) {
+    body {
+        font-size: 16px; /* Tamaño de fuente base */
+    }
+    #popMostrarMas{
+        width: 52%;
+    }
+    #popMostrarMas h3{
+        font-size: 19px;
+    }
+    
+    #ingresoDeDatos h3{
+        font-size: 30px ;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        color: rgb(240, 240, 240);
+    }
+    #ingresoDeDatos{
+        margin-top: 50px;
+        width: 30%;
+        height: 650px  !important;
+    }
+
+    .fullPantalla {
+        padding: 50px; /* Reducir el padding */
+    }
+    #ingresoDeDatos {
+        width: 50%; /* Reducir el ancho */
+        height: auto; /* Altura automática */
+    }
+    #datos input,
+    #datos select {
+        width: 100%; /* Ancho completo */
+    }
+}
+
+/* Estilos para tablets */
+@media only screen and (max-width: 768px) {
+    .contenedorPrincipal {
+        padding: 10px; /* Espaciado interior */
+    }
+    .fullPantalla {
+        padding: 30px; /* Reducir el padding */
+    }
+    #ingresoDeDatos {
+        width: 70%; /* Reducir el ancho */
+    }
+}
+
+/* Estilos para celulares */
+@media only screen and (max-width: 580px) {
+    #ingresoDeDatos h3{
+        font-size: 27px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        color: rgb(240, 240, 240);
+    }
+
+    #ingresoDeDatos {
+        width: 50%; /* Reducir el ancho */
+        height: auto; /* Altura automática */
+    }
+
+    #datos{
+        width: 100% !important;
+    }
+
+    #datos input,
+    #datos select, input {
+        width: 60% !important; /* Ancho completo */
+    }
+    label{
+        font-size: 26px !important;
+    }
+    .contenedorPrincipal {
+        padding: 5px; /* Espaciado interior */
+    }
+    .fullPantalla {
+        padding: 20px; /* Reducir el padding */
+    }
+    #ingresoDeDatos {
+        width: 90%; /* Reducir el ancho */
+    }
+
+    .popUp{
+        margin-top: 100px;
+        height: 870px;
+        width: 90%;
+    }
+
+
+}
+
+@media only screen and (max-width: 380px) {
+    #ingresoDeDatos h3{
+        font-size: 22px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        color: rgb(240, 240, 240);
+    }
+    label{
+        font-size: 20px !important;
+    }
+}

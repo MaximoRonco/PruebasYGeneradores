@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabajo Practico de Simulación</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <main>
+        <div id="contenedorPrincipal" class="contenedorPrincipal">
+            <div id="particles-js">
+
+            </div>
+            <div id="grafica" class="none">
+                <canvas id="myChart"></canvas>
+                <button id="volver" type="button" class="btn btn-primary">Volver</button>
+                <button id="mostrarMas" type="button" class="btn btn-primary">Mostrar Más</button>
+            </div>
+            <div id="popFondoMostrarMas" class="none">
+                <div id="popMostrarMas" class="none popUp">
+                    <h3>NUMEROS GENERADOS Y TRANSFORMADOS</h3>
+                    <div id="colRnd" class="none">
+                        <div id="columnaGenerados"></div>
+                        <div id="columnaTransformados"></div>
+                    </div>
+                    <button id="salir" class="btn btn-primary">Salir</button>
+                </div>
+            </div>
+            <div id="tabla" class="none">
+            </div>
+            <div id="popFondoUniforme" class="none">
+                <div id="popUniforme" class="none popUp" >
+                    <label for="inputA">A:</label>
+                    <input type="text" name="inputA" id="inputA">
+                    <label for="inputB">B:</label>
+                    <input type="text" name="inputB" id="inputB">
+                    <button id="okUniforme" class="btn btn-primary">OK</button>
+                </div>
+            </div>
+            <div id="popFondoExponencial" class="none">
+                <div id="popExponencial" class="none popUp" >
+                    <label for="lambda">Lambda:</label>
+                    <input type="text" name="lambda" id="lambda">
+                    <button id="okExponencial" class="btn btn-primary">OK</button>
+                </div>
+            </div>
+            <div id="popFondoNormal" class="none">
+                <div id="popNormal" class="none popUp" >
+                    <label for="media">Media:</label>
+                    <input type="text" name="media" id="media">
+                    <label for="desv">Desviación Estandar:</label>
+                    <input type="text" name="desv" id="desv">
+                    <button id="okNormal" class="btn btn-primary">OK</button>
+                </div>
+            </div>
+
+
+            <div id="ingresoDeDatos">
+                <div class="linea">
+                    <h3>PRUEBAS Y GENERADORES</h3>
+                </div>
+                <div id="datos">
+                    <div id="cont-datos">
+                        <label for="numeros">Numeros aleatorios:</label>
+                        <input id="numerosAleatorios" type="text" name="numeros">
+                        <label for="intervalos">Cantidad de Intervalos:</label>
+                        <select name="intervalos" id="intervalos">
+                            <option value="10">10</option>
+                            <option value="15">15</option>
+                            <option value="20">20</option>
+                            <option value="25">25</option>
+                        </select>
+                        <label for="distribucion">Distribuciones:</label>
+                        <select name="distribucion" id="distribucion">
+                            <option value=""></option>
+                            <option value="normal">Normal</option>
+                            <option value="uniforme">Uniforme</option>
+                            <option value="exponencial">Exponencial</option>
+                        </select>
+                    </div>
+                    <div id="datos-button">
+                        <button id="generar" type="button" class="btn btn-primary">Generar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="particles.min.js"></script>
+    <script src="particulas.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./script.js"></script>
+</body>
+</html>
