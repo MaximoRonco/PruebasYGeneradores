@@ -391,7 +391,18 @@ input[type="text"], select {
     #columnaTransformados {
     max-height: 400px; /* Ajusta esta altura según tus necesidades */
     overflow-y: auto; /* Agrega desplazamiento vertical si es necesario */
-}
+    }
+    #columnaGenerados{
+        width: 120px;
+    }
+    
+    #columnaTransformados{
+        width: 120px;
+    }
+    #tabla{
+        height: 1300px;
+    }
+
 }
 
 
