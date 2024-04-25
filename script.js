@@ -92,6 +92,7 @@ generar.addEventListener("click", () => {
             crearTabla(numerosGenerados, numerosTransformados);
             // Llama a la función para crear el gráfico, pasando tablas e intervalos como parámetros
             crearGrafico(tablas, numIntervalos);
+            
             pantallaGrafico();
             numerosAleatorios.value = "";
             intervalos.value = "";
@@ -155,7 +156,7 @@ function transformarAUniforme(numerosAleatorios, primerParametro, segundoParamet
     let numerosTransformados = [];
     for (let i = 0; i < numerosAleatorios.length; i++) {
         let valorTransformado = primerParametro + (segundoParametro - primerParametro) * numerosAleatorios[i];
-        numerosTransformados.push(valorTransformado.toFixed(4));
+        numerosTransformados.push(valorTransformado);
     }
     return numerosTransformados;
 }
@@ -602,7 +603,7 @@ okUniforme.addEventListener("click",()=>{
                     popFondoExponencial.classList.remove("block");
                     popFondoExponencial.classList.add("none");
                 }
-    }
+        }
 });
 
 okNormal.addEventListener("click",()=>{
@@ -610,18 +611,23 @@ okNormal.addEventListener("click",()=>{
         let txt = "Complete todos los campos";
         sweetAlert("error",txt);
     }else{
-        popNormal.classList.remove("block");
-        popNormal.classList.add("none");
-        popUniforme.classList.remove("block");
-        popUniforme.classList.add("none");
-        popExponencial.classList.remove("block");
-        popExponencial.classList.add("none");
-        popFondoUniforme.classList.remove("block");
-        popFondoUniforme.classList.add("none");
-        popFondoNormal.classList.remove("block");
-        popFondoNormal.classList.add("none");
-        popFondoExponencial.classList.remove("block");
-        popFondoExponencial.classList.add("none");
+        if (media.value <= 0 || desv.value <= 0) {
+            let txt = "Ingrese numeros positivos";
+            sweetAlert("error",txt);
+        }else{
+            popNormal.classList.remove("block");
+            popNormal.classList.add("none");
+            popUniforme.classList.remove("block");
+            popUniforme.classList.add("none");
+            popExponencial.classList.remove("block");
+            popExponencial.classList.add("none");
+            popFondoUniforme.classList.remove("block");
+            popFondoUniforme.classList.add("none");
+            popFondoNormal.classList.remove("block");
+            popFondoNormal.classList.add("none");
+            popFondoExponencial.classList.remove("block");
+            popFondoExponencial.classList.add("none");
+        }
     }
 });
 
@@ -630,30 +636,37 @@ okExponencial.addEventListener("click",()=>{
         let txt = "Complete todos los campos";
         sweetAlert("error",txt);
     }else{
-        popExponencial.classList.remove("block");
-        popExponencial.classList.add("none");
-        popNormal.classList.remove("block");
-        popNormal.classList.add("none");
-        popUniforme.classList.remove("block");
-        popUniforme.classList.add("none");
-        popFondoUniforme.classList.remove("block");
-        popFondoUniforme.classList.add("none");
-        popFondoNormal.classList.remove("block");
-        popFondoNormal.classList.add("none");
-        popFondoExponencial.classList.remove("block");
-        popFondoExponencial.classList.add("none");
+        if (lambda.value <= 0) {
+            let txt = "Ingrese numeros positivos";
+            sweetAlert("error",txt);
+        }else{
+            popExponencial.classList.remove("block");
+            popExponencial.classList.add("none");
+            popNormal.classList.remove("block");
+            popNormal.classList.add("none");
+            popUniforme.classList.remove("block");
+            popUniforme.classList.add("none");
+            popFondoUniforme.classList.remove("block");
+            popFondoUniforme.classList.add("none");
+            popFondoNormal.classList.remove("block");
+            popFondoNormal.classList.add("none");
+            popFondoExponencial.classList.remove("block");
+            popFondoExponencial.classList.add("none");
+        }
     }
 });
 
 function tablaHTML(tablas, numerosTransformados, numerosGenerados){
-    columnaRandoms.innerHTML = `<li class="columna encabezado">Randoms</li>`
-    numerosGenerados.forEach(fila =>{
+    columnaRandoms.innerHTML = `<li class="columna">Randoms</li>`
+    /*numerosGenerados.forEach(fila =>{
         columnaRandoms.innerHTML += `
                                         <li class="columna">${fila.toFixed(4)}</li>      
                                     `;
-    });
-    columnaTransformados.innerHTML = `<li class="columna encabezado">${distribucion.value}</li>`
-    numerosTransformados.forEach(elemento =>{
+    });*/
+    
+    columnaTransformados.innerHTML = `<li class="columna encabezado">${distribucion.value}</li>`;
+    tablaNumerosNuevo(numerosGenerados, numerosTransformados);
+    /*numerosTransformados.forEach(elemento =>{
         let numero = parseFloat(elemento);
         if (!isNaN(numero)) {
             let celda = numero.toFixed(4);
@@ -663,7 +676,7 @@ function tablaHTML(tablas, numerosTransformados, numerosGenerados){
         } else {
             console.error('El elemento no es un número válido:', elemento);
         }
-    });
+    });*/
 
 tabla.innerHTML += `<div class="fila"> 
                             <li class="columna encabezado">Intervalo</li>
@@ -712,6 +725,26 @@ function crearTabla(numGen, numTransf){
 }
 
 
+function tablaNumerosNuevo(randoms, transformados){
+    let randomsRedondeados = redondear(randoms);
+    let transformadosRedondeados  = redondear(transformados);
+    //console.log(randomsRedondeados);
+    //console.log(transformadosRedondeados);
+    let cadenaRandoms =  randomsRedondeados.join(' ');
+    let cadenaTransformados = transformadosRedondeados.join(' ');
+    columnaRandoms.innerHTML += cadenaRandoms;
+    columnaTransformados.innerHTML += cadenaTransformados;
+}
+
+function redondear(arr){
+    let arregloRedondeado = [];
+    arr.forEach(element => {
+        arregloRedondeado.push(element.toFixed(4));
+    });
+    return arregloRedondeado
+}
+
+
 /* Framework Alertas */
 
 function sweetAlert(icono, texto) {
@@ -725,6 +758,5 @@ function sweetAlert(icono, texto) {
         },
     });
 }
-
 
 

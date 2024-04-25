@@ -179,6 +179,7 @@ input[type="text"], select {
 #popMostrarMas{
     
     height: 800px !important;
+    width: 700px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -191,18 +192,29 @@ input[type="text"], select {
 }
 
 #columnaGenerados{
+    display: flex;
+    flex-direction: column;
+    width: 135px;
     color: white;
     margin-right: 5px;
+    font-size: 20px;
 }
 
 #columnaTransformados{
     color: rgb(0, 0, 0);
     background-color: white !important;
-    
+    display: flex;
+    flex-direction: column;
+    width: 135px;
+    color: rgb(2, 2, 2);
+    margin-right: 5px;
+    font-size: 20px;
 }
 
 #columnaGenerados li, #columnaTransformados li{
+    text-align: center;
     border-bottom: 5px solid rgb(0, 0, 0);
+    width: 120px;
 }
 
 #tabla{
@@ -312,6 +324,27 @@ input[type="text"], select {
     height: 1200px;
 }
 
+/*numeros generados y transformados*/
+/*
+#numerosGenerados{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 200px;
+    background-color: aliceblue;
+    color: rgb(80, 5, 5) !important;
+}
+
+
+#numerosTransformados{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 200px;
+    background-color: aliceblue;
+    color: aqua !important;
+}*/
+
 /* Responsive */
 
 @media only screen and (max-width: 1600px) {
@@ -322,10 +355,6 @@ input[type="text"], select {
         font-size: 20px;
     }
     
-
-    #contenedorPrincipal{
-        height: 2100px !important;
-    }
     #ingresoDeDatos h3{
         font-size: 35px;
         margin-top: 30px;
@@ -349,6 +378,20 @@ input[type="text"], select {
     #datos select {
         width: 100%; /* Ancho completo */
     }
+
+    #popMostrarMas{
+    
+        height: 600px !important;
+        width: 700px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    #columnaGenerados,
+    #columnaTransformados {
+    max-height: 400px; /* Ajusta esta altura según tus necesidades */
+    overflow-y: auto; /* Agrega desplazamiento vertical si es necesario */
+}
 }
 
 
@@ -500,3 +543,5 @@ input[type="text"], select {
         font-size: 20px !important;
     }
 }
+
+
